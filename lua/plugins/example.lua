@@ -84,4 +84,17 @@ return {
       end,
     },
   },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      highlight = {
+        enable = false,
+        -- optionally: disable = { "lua", "python", ... }  -- languages to disable individually
+      },
+      -- you can leave other features (indent, folds) as you like
+      indent = { enable = true },
+      folds = { enable = true },
+    },
+  },
 }
