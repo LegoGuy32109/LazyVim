@@ -20,4 +20,5 @@ open_fileexplorer() {
 alias ex='open_fileexplorer'
 
 export GEOH_SHARED_ENVIRONMENT_DIRECTORY="/home/josh/OneDrive/Environments"
+export LG_CONFIG_FILE="/home/josh/.config/nvim/omarchy_config/lazygit.yml"
 ```

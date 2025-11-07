@@ -1,0 +1,11 @@
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md?utm_source=chatgpt.com#:~:text=true%0A%0A%23%20Keybindings-,keybinding%3A,-universal%3A%0A%20%20%20%20quit
+keybinding:
+  universal:
+    prevItem-alt: "k"
+    nextItem-alt: "l"
+    scrollLeft: "J"
+    scrollRight: ":"
+    prevBlock-alt: "j"
+    nextBlock-alt: ";"
+    scrollUpMain-alt1: "K"
+    scrollDownMain-alt1: "L"
