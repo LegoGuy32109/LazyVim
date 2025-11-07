@@ -11,6 +11,30 @@ return {
   },
 
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        mappings = {
+          ["l"] = "next_sibling",
+          ["k"] = "prev_sibling",
+          ["j"] = "close_node",
+          [";"] = "open",
+        },
+      },
+    },
+    filesystem = {
+      window = {
+        mappings = {
+          ["l"] = "next_sibling",
+          ["k"] = "prev_sibling",
+          ["j"] = "close_node",
+          [";"] = "open",
+        },
+      },
+    },
+  },
+
+  {
     "lewis6991/gitsigns.nvim",
     event = "LazyFile",
     opts = {
@@ -95,6 +119,29 @@ return {
       -- you can leave other features (indent, folds) as you like
       indent = { enable = true },
       folds = { enable = true },
+    },
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        denols = {
+          enabled = true,
+          -- root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
+          -- optional settings for denols:
+          settings = {
+            deno = {
+              enable = true,
+              lint = true,
+              fmt = true,
+            },
+          },
+        },
+        vtsls = {
+          enabled = false,
+        },
+      },
     },
   },
 }
