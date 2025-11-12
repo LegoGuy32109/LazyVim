@@ -127,7 +127,7 @@ return {
     opts = {
       servers = {
         denols = {
-          enabled = true,
+          enabled = false,
           -- root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
           -- optional settings for denols:
           settings = {
@@ -139,7 +139,7 @@ return {
           },
         },
         vtsls = {
-          enabled = false,
+          enabled = true,
         },
       },
     },
