@@ -126,10 +126,11 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        vtsls = {
+          enabled = true,
+        },
         denols = {
           enabled = false,
-          -- root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
-          -- optional settings for denols:
           settings = {
             deno = {
               enable = true,
@@ -137,9 +138,6 @@ return {
               fmt = true,
             },
           },
-        },
-        vtsls = {
-          enabled = true,
         },
       },
     },
