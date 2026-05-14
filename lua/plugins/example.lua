@@ -108,7 +108,15 @@ return {
       end,
     },
   },
-
+  {
+    "saghen/blink.cmp",
+    opts = function(_, opts)
+      opts.enabled = function()
+        return vim.bo.filetype ~= "glsl"
+      end
+      return opts
+    end,
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -127,10 +135,10 @@ return {
     opts = {
       servers = {
         vtsls = {
-          enabled = true,
+          enabled = false,
         },
         denols = {
-          enabled = false,
+          enabled = true,
           settings = {
             deno = {
               enable = true,
@@ -138,6 +146,9 @@ return {
               fmt = true,
             },
           },
+        },
+        glsl_analyzer = {
+          enabled = true,
         },
       },
     },
