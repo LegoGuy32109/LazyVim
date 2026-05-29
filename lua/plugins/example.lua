@@ -192,9 +192,6 @@ return {
 
           settings = {
             tailwindCSS = {
-              experimental = {
-                configFile = "./static/styles.css",
-              },
               includeLanguages = {
                 typescript = "javascript",
                 typescriptreact = "javascript",
