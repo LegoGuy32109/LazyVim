@@ -150,6 +150,58 @@ return {
         glsl_analyzer = {
           enabled = true,
         },
+        tailwindcss = {
+          enabled = true,
+          workspace_required = false,
+
+          filetypes = {
+            "html",
+            "css",
+            "scss",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+          },
+
+          root_dir = function(bufnr, on_dir)
+            local util = require("lspconfig.util")
+            local fname = vim.api.nvim_buf_get_name(bufnr)
+
+            local root = util.root_pattern(
+              "tailwind.config.js",
+              "tailwind.config.ts",
+              "tailwind.config.cjs",
+              "tailwind.config.mjs",
+              "postcss.config.js",
+              "postcss.config.mjs",
+              "vite.config.ts",
+              "vite.config.js",
+              "deno.json",
+              "deno.jsonc",
+              "package.json",
+              ".git"
+            )(fname) or vim.fn.getcwd()
+
+            if on_dir then
+              on_dir(root)
+            end
+
+            return root
+          end,
+
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                configFile = "./static/styles.css",
+              },
+              includeLanguages = {
+                typescript = "javascript",
+                typescriptreact = "javascript",
+              },
+            },
+          },
+        },
       },
     },
   },
